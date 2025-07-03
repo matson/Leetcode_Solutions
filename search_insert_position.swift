@@ -1,3 +1,6 @@
+
+// Category: Binary Search 
+
 func searchInsert(nums: [Int], target: Int) -> Int {
     // binary search:
     var n: Int = nums.count
