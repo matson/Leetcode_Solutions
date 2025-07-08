@@ -9,7 +9,9 @@ func canPlaceFlowers(flowerbed: [Int], n: Int) -> Bool {
     // brute force
     for i in 0..<bed.count {
         if bed[i] == 0{
+            // is the left neighbor empty or doesn't exist
             let emptyLeft = ( i == 0 || bed[i-1] == 0)
+            // is the right neighbor empty or doesn't exist 
             let emptyRight = (i == bed.count - 1 || bed[i+1] == 0)
             
             if emptyLeft && emptyRight {
@@ -22,7 +24,7 @@ func canPlaceFlowers(flowerbed: [Int], n: Int) -> Bool {
             }
         }
     }
-    // if the count is 0 then it will be true 
+    // if the count is 0 then it will be true
     return count <= 0
 }
 
