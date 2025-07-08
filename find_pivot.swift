@@ -1,4 +1,4 @@
-
+// Category: Prefix Sum
 // O(n) 
 func find_pivot_index(nums: [Int]) -> Int {
     // get total running sum
