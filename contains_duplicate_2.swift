@@ -27,14 +27,14 @@ func containsDuplicate2(nums: [Int], k: Int) -> Bool {
     
     for i in 0..<nums.count{
         let num = nums[i]
+        // if there is a previous index match
         if let prevIndex = lastSeen[num]{
             if i - prevIndex <= k {
                 return true
             }
         }
+        // place in dict 
         lastSeen[num] = i
-       
     }
     return false
-    
 }
