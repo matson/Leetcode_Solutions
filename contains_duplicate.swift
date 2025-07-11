@@ -39,5 +39,15 @@ func containsDuplicate(nums: [Int]) -> Bool {
 }
 
 
+// Even better
+// use a set instead 
+func containsDuplicate(nums: [Int]) -> Bool {
+    var set1 = Set(nums)
+    return !(set1.count == nums.count)
+}
+
+print(containsDuplicate(nums: [1,2,3,1]))
+print(containsDuplicate(nums: [1,2,3,4]))
+
 
 
