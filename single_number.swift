@@ -20,3 +20,14 @@ func singleNumber(nums: [Int]) -> Int {
 print(singleNumber(nums: [2,2,1])) // 1
 print(singleNumber(nums: [4,1,2,1,2])) // 4
 print(singleNumber(nums: [1])) // 1
+
+// O(n), O(1) space 
+func singleNumber(nums: [Int]) -> Int {
+    
+   // XOR trick - this I had to look up cuz WTF
+    var result = 0
+    for num in nums{
+        result = result ^ num
+    }
+    return result
+}
