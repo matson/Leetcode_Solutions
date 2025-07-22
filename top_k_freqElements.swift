@@ -1,4 +1,5 @@
-
+// Level: medium
+// Category: hashmap 
 // O(n*log(n))
 func topKFreq(nums: [Int], k: Int) -> [Int]{
     
