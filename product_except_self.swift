@@ -38,3 +38,34 @@ func productExceptSelf(nums: [Int]) -> [Int]{
 
 print(productExceptSelf(nums: [1,2,4,6])) // [48, 24, 12, 8]
 print(productExceptSelf(nums: [-1,0,1,2,3])) // [0, -6, 0, 0, 0]
+
+// this one is tricky review it
+func productExceptSelf(nums: [Int]) -> [Int] {
+    
+    // say n is the value self
+    // now not using division
+    // we need to just multiply the values before n, and after n.
+    // has a prefix and postfix
+    
+    var result = Array(repeating: 1, count: nums.count)
+    var leftProduct = 1
+    var rightProduct = 1
+    
+    // prefix pass
+    for i in 0..<nums.count {
+        result[i] = leftProduct
+        leftProduct *= nums[i]
+    }
+    
+    // postfix pass
+    for i in (0..<nums.count).reversed(){
+        result[i] *= rightProduct
+        rightProduct *= nums[i]
+    }
+    
+    return result 
+    
+}
+
+
+print(productExceptSelf(nums: [1,2,3,4])) // [24, 12, 8, 6]
