@@ -1,3 +1,7 @@
+
+// Category: HashSet
+// Level: Medium 
+
 func isValidSudoku(board: [[String]]) -> Bool {
     
     // brute force
