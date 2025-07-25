@@ -14,7 +14,7 @@ func isPalindrome(s: String) -> Bool {
 }
 
 // Two pointer solution  
-func isPalindromeString(s: String) -> Bool {
+func isPalindrome(s: String) -> Bool {
     // take all spaces, non-alpha numeric char out
     var filtered = s.filter { $0.isLetter || $0.isNumber }
     var str = Array(filtered.lowercased())
@@ -29,10 +29,6 @@ func isPalindromeString(s: String) -> Bool {
     }
     return true
 }
-
-print(isPalindromeString(s: "Was it a car or a cat I saw?"))
-print(isPalindromeString(s: "tab a cat")) // false
-
 
 print(isPalindrome(s: "Was it a car or a cat I saw?")) // true
 print(isPalindrome(s: "tab a cat")) // false
