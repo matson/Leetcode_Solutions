@@ -1,5 +1,6 @@
-
-
+// Category: two pointer
+// Level: Medium 
+// O(n)
 func maxArea(height: [Int]) -> Int {
     
     // two pointer
@@ -23,7 +24,7 @@ func maxArea(height: [Int]) -> Int {
 }
 
 
-
+// O(n^2) - will not finish on leetcode 
 func maxArea(heights: [Int]) -> Int {
     
     // brute force
