@@ -1,5 +1,26 @@
 
-// Category: greedy 
+// Category: greedy, two pointer 
+
+// O(n)
+func maxProfit(prices: [Int]) -> Int {
+    // two pointer approach
+    var left: Int = 0 // day 1
+    var maxProfit: Int = 0
+    var right: Int = 1 // day 2
+    
+    while right < prices.count {
+        // if there is a profit
+        if prices[left] < prices[right]{
+            let profit = prices[right] - prices[left]
+            maxProfit = max(maxProfit, profit)
+        } else {
+            left += 1
+        }
+        right += 1
+    }
+    return maxProfit
+
+}
 // O(n^2)
 func maxProfit(prices: [Int]) -> Int {
     
