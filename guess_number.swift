@@ -1,22 +1,10 @@
 
 
-
-
 // * Binary Search Variant *
 
 // will be sorted order
 // O(n) -> O(log n)
-// instead of array, binary search on range of values
-
-
-
-
-
-
-// * Binary Search Variant *
-
-// will be sorted order
-// O(n) -> O(log n)
+// Level: easy, building block 
 // instead of array, binary search on range of values
 func guessNumber(n: Int) -> Int {
     
