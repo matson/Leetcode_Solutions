@@ -1,5 +1,36 @@
 
 
+// Category: Binary search 
+// Level: Medium
+// O(logn)
+func minEatingSpeed(piles: [Int], h: Int) -> Int {
+    
+    // binary search
+    var left: Int = 1
+    var right: Int = piles.max()!
+    var result = right // for now
+    
+    while left <= right {
+        // given
+        var k = (left + right) / 2
+        var totalTime: Int = 0
+        for pile in piles{
+            // round up for the total time
+            totalTime += Int(ceil(Double(pile) / Double(k)))
+        }
+        // if its the first lowest time
+        // this is the sorted-order part 
+        if totalTime <= h{
+            result = min(result, k)
+            right = k - 1 // search left more
+        } else{
+            left = k + 1
+        }
+        
+    }
+    return result
+}
+
 
 // O(n^2)
 // this will time exceed on leetcode *
