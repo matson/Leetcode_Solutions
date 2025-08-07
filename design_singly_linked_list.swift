@@ -90,3 +90,27 @@ class LinkedList {
     }
     
 }
+
+// ListNodes are not stored in memory the same way referenced out of memory
+// To loop through nodes:
+
+// O(n)
+/*
+ current = ListNode1
+ while (current != null){
+ current = current.next
+ }
+ */
+
+// To add another node at the end of the list
+// O(1)
+/*
+ tail.next = ListNode4
+ tail = ListNode4 - or tail = tail.next -> two operations
+ */
+
+// To remove a node
+// O(1) - O(n) if we search for an element specifically
+/*
+ head.next = head.next.next
+ */
