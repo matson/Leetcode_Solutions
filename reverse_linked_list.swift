@@ -1,5 +1,21 @@
 
-
+// Category: linked list
+// Level: Medium 
+// O(n) O(1) mem
+func reverse_linked_list(head: ListNode) -> ListNode?{
+    
+    // traverse through and point backwards
+    var prev: ListNode? = nil
+    var current: ListNode = head
+    
+    while current != nil{
+        let temp = current?.next
+        current.next = prev // <-
+        prev = current // set prev to current
+        current = temp // set current to the temp 
+    }
+    return prev // return the new head
+}
 
 
 // brute force 
