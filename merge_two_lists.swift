@@ -1,6 +1,37 @@
 
 // level: easy 
 // category: linked lists
+
+
+// O(n) 
+// pointer method 
+func mergeTwoLists(list1: ListNode?, list2: ListNode?) -> ListNode?{
+   
+   // 1 -> 2 -> 4
+   // 1 -> 3 -> 4
+    var dummy = ListNode(value: -1)
+    var tail = dummy
+    var l1 = list1
+    var l2 = list2
+    
+    while l1 != nil && l2 != nil{
+        if l1!.value < l2!.value{
+            // tail is the list1 value
+            tail.next = list1
+            // reassign the link
+            l1 = l1?.next
+        }else{
+            tail.next = l2
+            l2 = l2?.next
+        }
+        tail = tail.next!
+    }
+    
+    tail.next = l1 ?? l2
+    return dummy.next // return the true head of the list
+
+}
+
 // O(n)
 func mergeTwoLists(list1: ListNode?, list2: ListNode?) -> ListNode?{
     // brute force 
