@@ -1,6 +1,44 @@
 
-
-
+// category: linked list 
+// level: medium
+// O(n)
+func reorderLinkedList(head: ListNode?){
+    
+    // reverse the second link
+    // find the middle first - with a fast and slow pointer
+    var fast = head?.next
+    var slow = head
+    
+    while fast != nil && fast?.next != nil{
+        slow = slow?.next
+        fast = fast?.next?.next
+    }
+    
+    var second = slow?.next // find the middle
+    var prev: ListNode? = nil
+    slow?.next = nil // break the list
+    
+    // make everything point in reverse
+    while second != nil {
+        let tmp = second?.next
+        second?.next = prev
+        prev = second
+        second = tmp
+    }
+    
+    var first = head
+    second = prev
+    
+    // rearrange
+    while second != nil {
+        let tmp1 = first?.next
+        let tmp2 = second?.next
+        first?.next = second
+        second?.next = tmp1
+        first = tmp1
+        second = tmp2
+    }
+}
 
 
 
