@@ -1,8 +1,48 @@
 
 
 
-func addTwoNumbers(l1: ListNode?, l2: ListNode?)-> ListNode?{
 
+
+
+// category: linked lists
+// level: medium
+// O(n)
+func addTwoNumbers(l1: ListNode?, l2: ListNode?)-> ListNode?{
+    
+    // picture
+    //           1
+    // 5 -> 6 -> 4 -> 0
+    // 2 -> 4 -> 3 -> 3
+    // r:  7 -> 0 -> 8 -> 3
+    
+    var dummy = ListNode(value: -1)
+    var tail = dummy
+    var l1 = l1
+    var l2 = l2
+    var carry: Int = 0
+    
+    
+    while l1 != nil  || l2 != nil || carry != 0 {
+        var v1 = l1?.value ?? 0
+        var v2 = l2?.value ?? 0
+        
+        // new digit
+        var sum = v1 + v2 + carry
+        carry = sum / 10
+        let val = sum % 10
+        tail.next = ListNode(value: val)
+        
+        tail = tail.next!
+        // go through the list 
+        l1 = l1?.next
+        l2 = l2?.next
+    }
+    return dummy.next
+}
+
+
+func addTwoNumbers(l1: ListNode?, l2: ListNode?)-> ListNode?{
+    // brute force 
     guard l1 != nil || l2 != nil else {return nil}
     
     var arr1: [Int] = []
