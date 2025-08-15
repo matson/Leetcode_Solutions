@@ -39,3 +39,11 @@ func searchTree(root: TreeNode?, target: Int) -> Bool{
         return true
     }
 }
+
+// * Trees *
+// Things on trees:
+// Binary trees are not allowed cycles
+// at least one root node, some leaf nodes
+// Binary Search Trees: they have a sorted property
+// all right nodes need to be greated than
+// all left nodes need to be less than root, it's recursive for each node
