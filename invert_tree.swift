@@ -10,7 +10,7 @@ func invertTree(root: TreeNode?)-> TreeNode?{
     // switch the pointers
     // need to do this right or else it will screw up the pointers
     (root.left, root.right) = (root.right, root.left)
-    // inOrder trav. 
+    // DFS 
     invertTree(root: root.left)
     invertTree(root: root.right)
   
