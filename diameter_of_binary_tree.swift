@@ -12,11 +12,9 @@ func diameterOfBinaryTree(root: TreeNode?) -> Int {
         let left = dfs(root: root.left)
         let right = dfs(root: root.right)
         result = max(result, left + right)
-        return 1 + max(left, right)
+        return 1 + max(left, right) // returns height
     }
     
     dfs(root: root)
-    return result
-    
-    
+    return result // returns diameter
 }
