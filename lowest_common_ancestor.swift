@@ -1,6 +1,7 @@
 // category: trees
 // level: medium 
-// O(logn)
+// O(logn) - balanced tree
+// O(h) - unbalanced tree 
 func lowestCommonAncestor(root: TreeNode?, p: TreeNode?, q: TreeNode?) -> TreeNode?{
     // start at root - will always be the common ancestor of every node
     
