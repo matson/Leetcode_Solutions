@@ -1,5 +1,7 @@
 
 // BFS
+// category: tree
+// level: medium 
 func rightSideView(root: TreeNode?) -> [Int]{
     
     var arr: [Int] = []
